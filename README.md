@@ -1,5 +1,7 @@
 # Notice Board System
 
+![CI](https://github.com/Bam2k1/Software_Engineering_Project/actions/workflows/ci.yml/badge.svg)
+
 A Java-based notice board system built for university departments. Departments can post notices to their boards, and subscribed users get notified in real time. Supports multiple notice types, user roles, and keyword search.
 
 ---
