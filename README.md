@@ -58,7 +58,7 @@ src/
 
 ## Running the Demo
 
-Make sure you have JDK 11+ installed.
+Make sure you have JDK 21 installed.
 
 ```bash
 # Compile
