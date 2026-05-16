@@ -24,6 +24,13 @@ public class EventNotice extends Notice {
         return "[Event] " + getTitle() + " @ " + venue + ": " + getContent();
     }
 
+    @Override
+    public void onPost() {
+        if (eventDate != null) {
+            System.out.println("  [Event scheduled] " + getTitle() + " at " + venue + " on " + eventDate);
+        }
+    }
+
     public Date getEventDate() { return eventDate; }
     public String getVenue()   { return venue; }
     public void setVenue(String venue) { this.venue = venue; }

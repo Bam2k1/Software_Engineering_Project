@@ -51,6 +51,10 @@ public abstract class Notice {
 
     public abstract String getDetails();
 
+    public void onPost() {
+        // default: nothing extra happens. Subclasses override for type-specific behavior.
+    }
+
     public String getNoticeId()        { return noticeId; }
     public String getTitle()           { return title; }
     public String getContent()         { return content; }

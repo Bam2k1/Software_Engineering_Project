@@ -16,6 +16,11 @@ public class UrgentNotice extends Notice {
     }
 
     public void escalate() {
-        System.out.println("ESCALATING: " + getTitle());
+        System.out.println("  !! URGENT ALERT !! " + getTitle() + " — requires immediate attention");
+    }
+
+    @Override
+    public void onPost() {
+        escalate();
     }
 }

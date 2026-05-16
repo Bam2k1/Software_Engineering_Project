@@ -24,6 +24,7 @@ public class NoticeBoard implements Subject {
     public void addNotice(Notice notice) {
         notices.add(notice);
         notifyObservers(notice);
+        notice.onPost();
     }
 
     public void removeNotice(String noticeId) {

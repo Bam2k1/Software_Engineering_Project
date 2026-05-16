@@ -3,8 +3,10 @@ package app;
 import app.enums.Priority;
 import app.enums.UserRole;
 import app.models.User;
+import app.notices.EventNotice;
 import app.notices.GeneralNotice;
 import app.notices.Notice;
+import app.notices.UrgentNotice;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -60,5 +62,29 @@ public class NoticeTest {
         Notice n = new GeneralNotice("N1", "Title", "Content", author);
         n.setPriority(Priority.LOW);
         assertEquals(Priority.LOW, n.getPriority());
+    }
+
+    @Test
+    void urgentNoticeHasHighPriorityByDefault() {
+        Notice n = new UrgentNotice("N1", "Server Down", "Down now", author);
+        assertEquals(Priority.HIGH, n.getPriority());
+    }
+
+    @Test
+    void urgentNoticeOnPostRunsWithoutError() {
+        Notice n = new UrgentNotice("N1", "Server Down", "Down now", author);
+        assertDoesNotThrow(n::onPost);
+    }
+
+    @Test
+    void eventNoticeOnPostHandlesNullEventDate() {
+        Notice n = new EventNotice("N1", "Talk", "Tech talk", author);
+        assertDoesNotThrow(n::onPost);
+    }
+
+    @Test
+    void generalNoticeOnPostUsesDefaultNoOp() {
+        Notice n = new GeneralNotice("N1", "Hello", "World", author);
+        assertDoesNotThrow(n::onPost);
     }
 }
