@@ -74,10 +74,10 @@ public class Main {
         System.out.println(">> Bob's total notifications received:   " + bob.viewNotices().size());
 
         // --- Unsubscribe demo ---
+        System.out.println("\n>> After Bob unsubscribes:");
         board.unsubscribe(bob);
         board.addNotice(factory.createNotice("GENERAL", "N4", "Exam Schedule",
                 "Final exams start May 10.", admin));
-        System.out.println("\n>> After Bob unsubscribes:");
         System.out.println("   Alice's notifications: " + alice.viewNotices().size());
         System.out.println("   Bob's notifications:   " + bob.viewNotices().size() + " (no new ones)");
 
