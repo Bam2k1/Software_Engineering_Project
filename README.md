@@ -51,6 +51,8 @@ src/
 └── test/java/app/
     ├── NoticeBoardTest.java
     ├── NoticeFactoryTest.java
+    ├── NoticeTest.java
+    ├── DepartmentTest.java
     └── UserTest.java
 ```
 
